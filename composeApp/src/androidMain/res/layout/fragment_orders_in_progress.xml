@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Include fragment -->
+    <include
+        layout="@layout/fragment_home_c"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Include toolbar -->
+    <include
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_home_c"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gridContainer"
+        android:layout_width="350dp"
+        android:layout_height="660dp"
+        android:layout_margin="8dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <!-- Tabs (In progress / Order placed) -->
+        <LinearLayout
+            android:id="@+id/tabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@layout/toolbar"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/tab_in_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="In progress"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tab_order_placed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Order placed"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Información de entrega -->
+        <TextView
+            android:id="@+id/delivery_info"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:text="Delivering: Thursday 01 November | 10am-2pm"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tabs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Tiempo restante -->
+        <TextView
+            android:id="@+id/time_remaining"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:text="0 Day 5h 35m left to complete your order"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/delivery_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+            <!-- Primera tarjeta (Producto 1) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/time_remaining"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/product_image"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="280dp"
+                    android:src="@drawable/deleted_1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginHorizontal="310dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="centerCrop"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@drawable/button_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BRESIL MOGIANA - NATURE"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23€/KG À PARTIR DE 5KG"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="• nature  • bresil  • espresso  • chocolat"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/frame_1961"
+                        android:layout_width="290dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/frame_1962">
+
+                        <TextView
+                            android:id="@+id/kg_3_"
+                            android:layout_width="190dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/kg_3_"
+                            android:textAppearance="@style/kg_3_"
+                            android:gravity="center_horizontal|top"
+                            />
+
+                        <TextView
+                            android:id="@+id/btn_decrease_1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:text="-"
+                            />
+
+                        <TextView
+                            android:id="@+id/quantity_1"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:text="4"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/frame_1962"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/btn_increase_1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/add_"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        <!-- Button de Order -->
+        <Button
+            android:id="@+id/order"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/fillColor"
+            android:textColor="@color/fillColor"
+            android:text="@string/order"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/gridContainer"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

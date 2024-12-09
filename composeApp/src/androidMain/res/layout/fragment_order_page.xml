@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Include fragment -->
+    <include
+        layout="@layout/fragment_home_c"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Include toolbar -->
+    <include
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_home_c"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gridContainer"
+        android:layout_width="350dp"
+        android:layout_height="550dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal"
+        android:layout_margin="8dp">
+
+        <!-- Título -->
+        <View
+            android:id="@+id/rectangle_5_1"
+            android:layout_width="330dp"
+            android:layout_height="52dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142dp"
+            android:background="@drawable/rectangle5"
+            tools:ignore="DuplicateIds,MissingConstraints">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/your_order_"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </View>
+
+        <!-- Ítems -->
+        <View
+            android:id="@+id/rectangle_5_2"
+            android:layout_width="330dp"
+            android:layout_height="52dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142dp"
+            android:background="@drawable/rectangle5"
+            tools:ignore="DuplicateIds">
+
+            <TextView
+                android:id="@+id/tvItemsHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/items_"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="ChildInNonViewGroup" />
+
+            <TextView
+                android:id="@+id/tvQtyHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/qty_"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toEndOf="@id/tvItemsHeader"
+                app:layout_constraintEnd_toStartOf="@id/tvPriceHeader"
+                tools:ignore="ChildInNonViewGroup" />
+
+            <TextView
+                android:id="@+id/tvPriceHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price_"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ChildInNonViewGroup" />
+
+        </View>
+
+        <!-- Fila 1: Crispy Yam Fries -->
+        <View
+            android:id="@+id/rectangle_5_3"
+            android:layout_width="330dp"
+            android:layout_height="52dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142dp"
+            android:background="@drawable/rectangle_5"
+            tools:ignore="DuplicateIds">
+
+            <TextView
+                android:id="@+id/tvItem1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/crispy_yam_fries"
+                app:layout_constraintTop_toBottomOf="@id/tvItemsHeader"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvQty1" />
+
+            <TextView
+                android:id="@+id/tvQty1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1_"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@id/tvItem1"
+                app:layout_constraintEnd_toStartOf="@id/tvPrice1" />
+
+            <TextView
+                android:id="@+id/tvPrice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_9_35"
+                app:layout_constraintTop_toTopOf="@id/tvItem1"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </View>
+
+        <!-- Fila 2: Chicken Wings -->
+
+        <View
+            android:id="@+id/rectangle_5_4"
+            android:layout_width="330dp"
+            android:layout_height="52dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142dp"
+            android:background="@drawable/rectangle_5"
+            tools:ignore="DuplicateIds">
+
+            <TextView
+                android:id="@+id/tvItem2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/chicken_wings"
+                app:layout_constraintTop_toBottomOf="@id/tvItem1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvQty2" />
+
+            <TextView
+                android:id="@+id/tvQty2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@id/tvItem2"
+                app:layout_constraintEnd_toStartOf="@id/tvPrice2" />
+
+            <TextView
+                android:id="@+id/tvPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_17_00"
+                app:layout_constraintTop_toTopOf="@id/tvItem2"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ChildInNonViewGroup" />
+        </View>
+
+        <View
+            android:id="@+id/rectangle_5_5"
+            android:layout_width="330dp"
+            android:layout_height="52dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142dp"
+            android:background="@drawable/rectangle_5"
+            tools:ignore="DuplicateIds" />
+
+        <!-- Input: Instrucciones -->
+        <EditText
+            android:id="@+id/etInstructions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Any food/allergy instructions"
+            android:background="@drawable/explorer"
+            app:layout_constraintTop_toBottomOf="@id/tvItem2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Subtotal -->
+        <TextView
+            android:id="@+id/tvSubtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtotal"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/etInstructions"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSubtotalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_26_35"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/etInstructions"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botón: Checkout -->
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/checkout"
+            android:backgroundTint="@color/background"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtotal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

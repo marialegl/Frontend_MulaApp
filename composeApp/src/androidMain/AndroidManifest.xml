@@ -1,0 +1,70 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mula.kmpapp">
+
+    <!-- Declaración de características y permisos -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/mula"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/mula_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LaMulaAppC"
+        android:requestLegacyExternalStorage="true">
+
+    <!-- Splash Screen Activity -->
+    <activity
+        android:name=".SplashScreenActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <!-- User Type Selection Activity -->
+    <activity
+        android:name=".SelectTypeActivity"
+        android:exported="true" />
+
+    <!-- Seller Activities -->
+    <activity
+        android:name=".seller.Products.AddProductActivity"
+        android:exported="false" />
+    <activity
+        android:name=".seller.LoginSellerActivity"
+        android:exported="false" />
+    <activity
+        android:name=".seller.SellerRegistrationActivity"
+        android:exported="false" />
+    <activity
+        android:name=".seller.MainActivitySeller"
+        android:exported="false" />
+
+    <!-- Client Activities -->
+    <activity
+        android:name=".client.LoginClientActivity"
+        android:exported="false" />
+    <activity
+        android:name=".client.RegistrationClientActivity"
+        android:exported="false" />
+    <activity
+        android:name=".client.MainActivityClient"
+        android:exported="true" />
+    </application>
+</manifest>
