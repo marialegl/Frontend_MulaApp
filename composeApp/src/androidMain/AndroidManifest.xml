@@ -28,16 +28,17 @@
         android:requestLegacyExternalStorage="true">
 
     <!-- Splash Screen Activity -->
-    <activity
-        android:name=".SplashScreenActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-    <!-- User Type Selection Activity -->
+
+        <!-- User Type Selection Activity -->
     <activity
         android:name=".SelectTypeActivity"
         android:exported="true" />
